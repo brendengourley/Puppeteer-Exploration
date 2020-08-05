@@ -10,8 +10,8 @@ const puppeteer = require('puppeteer');
   const prices = await page.$$eval('.p13n-sc-price', items => {
     return items.map( item => item.textContent )
   })
-  Object.entries(names).forEach((key, value) => {
-    console.log(`Product: ${key[1]}\n       Price: ${prices[value]}`)
+  Object.entries(names).forEach((key, index) => {
+    console.log(`Product: ${key[1]}\n       Price: ${prices[index]}`)
   })
   await browser.close()
 } )();
